@@ -1,8 +1,13 @@
+import { AppContext } from "../App/AppProvider";
+
 function WelcomeMessage () {
     return (
-      <div className="App">
-        Welcome to CryptoDash
-      </div>
+      <AppContext.Consumer>
+        {({firstVist}) => 
+        firstVist ? <div> 
+          Welcome to CryptoDash, please select your favorite coints to being.{''}
+        </div> : null}
+      </AppContext.Consumer>
     );
   }
 
