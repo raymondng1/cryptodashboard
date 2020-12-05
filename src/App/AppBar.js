@@ -26,7 +26,7 @@ function toProperCase(lower){
 function ControlButton({name, active}){
     return (
         <AppContext.Consumer>
-            {({page}, setPage ) => (
+            {({page, setPage} ) => (
             <ControlButtonElem 
             active={page === name}
             onClick={() => setPage(name)}
