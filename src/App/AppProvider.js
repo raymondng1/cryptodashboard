@@ -17,7 +17,9 @@ export class AppProvider extends React.Component{
             setPage: this.setPage,
             addCoin: this.addCoin,
             removeCoin: this.removeCoin,
-            confirmFavorites: this.confirmFavorites
+            isInFavorites: this.isInFavorites,
+            confirmFavorites: this.confirmFavorites,
+            setFilteredCoins: this.setFilteredCoins,
         }
     }
     componentDidMount = () => {
@@ -42,25 +44,29 @@ export class AppProvider extends React.Component{
         this.setState({favorites: _.pull(favorites, key)})
     }
 
+    isInFavorites = key => _.includes(this.state.favorites, key)
+    
     confirmFavorites = () => {
         this.setState({
             firstVisit: false,
             page: 'dashboard'
         });
         localStorage.setItem('cryptoDash', JSON.stringify({
-            test: 'hello'
+            favorites: this.state.favorites
         }));
     }
 
     savedSettings(){
-        let cryptoDashboard = JSON.parse(localStorage.getItem('cryptoDash'));
-        if (!cryptoDashboard){
+        let cryptoDashData = JSON.parse(localStorage.getItem('cryptoDash'));
+        if (!cryptoDashData){
             return {page: 'settings', firstVisit: true}
-
         }
-        return {};
+        let {favorites} = cryptoDashData;
+        return {favorites};
     }
     setPage = page => this.setState({page})
+
+    setFilteredCoins = (filteredCoins) => this.setState({filteredCoins})
 
     render(){
         return(
