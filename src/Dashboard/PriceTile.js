@@ -8,6 +8,10 @@ const JustifyRight = styled.div`
     justify-self: right;
 `
 
+const JustifyLeft = styled.div `
+    justify-self: left;
+`
+
 const TickerPrice = styled.div`
     ${fontSizeBig};
 `
@@ -23,7 +27,11 @@ const numberFormat = number =>{
 
 const PriceTileStyled = styled(SelectedTile)`
     ${props => props.compact && css`
+        display: grid;
         ${fontSize3}
+        grid-gap: 5px; 
+        grid-template-columns: repat(3, 1fr);
+        justify-items: right;
     `} 
 `
 
@@ -31,7 +39,7 @@ function ChangePercent({data}){
     return (
         <JustifyRight> 
             <ChangePct red={data.CHANGEPCT24HOUR < 0}>
-            {numberFormat(data.CHANGEPCT24HOUR)}
+            {numberFormat(data.CHANGEPCT24HOUR)}%
             </ChangePct>
          </JustifyRight>
     )
@@ -43,7 +51,7 @@ function PriceTile({sym,data}){
         <PriceTileStyled>
             <CoinHeaderGridStyled>
                 <div> {sym}</div>
-                <ChangePercent data={data}/>
+                <ChangePercent data={data} />
             </CoinHeaderGridStyled>
             <TickerPrice>
                 ${numberFormat(data.PRICE)}
@@ -56,13 +64,11 @@ function PriceTile({sym,data}){
 function PriceTileCompact({sym,data}){
     return (
         <PriceTileStyled compact>
-            <CoinHeaderGridStyled>
-                <div> {sym}</div>
-                <ChangePercent data={data}/>
-            </CoinHeaderGridStyled>
-            <TickerPrice>
+            <JustifyLeft> {sym} </JustifyLeft>
+            <ChangePercent data={data}/>
+            <div>
                 ${numberFormat(data.PRICE)}
-            </TickerPrice>
+            </div>
         </PriceTileStyled>
     )
 }
