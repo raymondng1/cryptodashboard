@@ -44,8 +44,15 @@ export class AppProvider extends React.Component{
 
     fetchHistorical = async () => {
         if(this.state.firstVisit) return;
-        
         let results = await this.historical();
+        let historical =[{
+            name: this.state.currentFavorite,
+            data: results.map((ticker,index) => [
+                moment().subtract({months: TIME_UNITS - index}).valueOf(),
+                ticker.USD
+            ])
+        }]
+        this.setState({historical})
     }
     prices = async () => {
         let returnData = [];
@@ -74,6 +81,7 @@ export class AppProvider extends React.Component{
                 )
             )
         }
+        return Promise.all(promises);
     }
     addCoin = key => {
         let favorites = [...this.state.favorites];
