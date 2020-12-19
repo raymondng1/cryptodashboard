@@ -103,9 +103,12 @@ export class AppProvider extends React.Component{
         this.setState({
             firstVisit: false,
             page: 'dashboard',
-            currentFavorite
+            currentFavorite,
+            prices : null,
+            historical:null
         }, () => {
             this.fetchPrices();
+            this.fetchHistorical();
         });
         localStorage.setItem('cryptoDash', JSON.stringify({
             favorites: this.state.favorites,
@@ -115,8 +118,9 @@ export class AppProvider extends React.Component{
 
     setCurrentFavorite = (sym) =>{
         this.setState({
-            currentFavorite: sym
-        });
+            currentFavorite: sym,
+            historical: null
+        }, this.fetchHistorical);
         localStorage.setItem('cryptoDash', JSON.stringify({
             ...JSON.parse(localStorage.getItem('cryptoDash')),
             currentFavorite: sym
