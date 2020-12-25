@@ -5,10 +5,10 @@ export default function(props){
     return <AppContext.Consumer>
         {({coinList, prices, firstVisit}) => {
             if(!coinList){
-                return <div> Loading Coins</div>
+                return <div> Loading Cryptocurrency Coins</div>
             }
             if(!firstVisit && !prices){
-                return <div> Loading PRices </div>
+                return <div> Loading Cryptocurrency Prices </div>
             }
             return <div> {props.children}</div>
         }}

@@ -39,7 +39,7 @@ function ControlButton({name, active}){
 }
 export default function(){
     return <Bar> 
-        <div> CryptoDash </div>
+        <div> Crypto Dashboard </div>
         <div> </div>
         <ControlButton active name="dashboard"/>
         <ControlButton name="settings"/>

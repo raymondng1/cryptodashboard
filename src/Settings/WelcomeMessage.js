@@ -5,7 +5,7 @@ function WelcomeMessage () {
       <AppContext.Consumer>
         {({firstVist}) => 
         firstVist ? <div> 
-          Welcome to CryptoDash, please select your favorite coints to being.{''}
+          Welcome to Crypto Dashboard, please select your favorite cryptocurrency coins to begin.{''}
         </div> : null}
       </AppContext.Consumer>
     );

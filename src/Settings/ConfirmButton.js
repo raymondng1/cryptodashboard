@@ -24,7 +24,7 @@ export default function(){
         {({confirmFavorites}) => 
         <CenterDiv>
             <ConfirmButtonStyled onClick={confirmFavorites}>
-                Confirm Favorites
+                Add to Dashboard
             </ConfirmButtonStyled>
         </CenterDiv> 
     }
