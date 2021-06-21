@@ -3,6 +3,11 @@ Crypto Dashboard is a real-time dashboard for tracking historical movement and p
 
 Live URL: https://cryptodashboard1.herokuapp.com/
 
+## Visuals
+Please see the below link for screenshots:
+
+https://raymondng.net/projects/cryptodash.html
+
 ## Installation
 In the project directory, you can run:
 
