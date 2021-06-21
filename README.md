@@ -9,7 +9,7 @@ Please see the below link for screenshots:
 https://raymondng.net/projects/cryptodash.html
 
 ## Installation
-##npm init
+### `npm init`
 
 No configuration or complicated folder structures, only the files you need to build your app.
 Once the installation is done, you can open your project folder:
