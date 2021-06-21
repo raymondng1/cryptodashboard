@@ -1,5 +1,9 @@
+#Crypto Dashboard
+Crypto Dashboard is a real-time dashboard for tracking historical movement and price of all cryptocurrencies.
+
 Live URL: https://cryptodashboard1.herokuapp.com/
 
+## Installation
 In the project directory, you can run:
 
 ### `npm start`
