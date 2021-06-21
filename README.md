@@ -10,7 +10,7 @@ https://raymondng.net/projects/cryptodash.html
 
 ## Installation
 In the project directory, you can run:
-###`cd cryptodashboard`
+### `cd cryptodashboard`
 ### `npm start` or `yarn start`
 
 Runs the app in the development mode.\
