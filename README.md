@@ -9,8 +9,12 @@ Please see the below link for screenshots:
 https://raymondng.net/projects/cryptodash.html
 
 ## Installation
-In the project directory, you can run:
+##npm init
+
+No configuration or complicated folder structures, only the files you need to build your app.
+Once the installation is done, you can open your project folder:
 ### `cd cryptodashboard`
+In the project directory, you can run:
 ### `npm start` or `yarn start`
 
 Runs the app in the development mode.\
